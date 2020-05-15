@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 用户表(User)实体类
  *
- * @author makejava
+ * @author yangwulin
  * @since 2020-05-14 09:31:36
  */
 public class User implements Serializable {

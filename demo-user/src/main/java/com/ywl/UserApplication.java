@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 用户模块启动类
- * @author Administrator
+ * @author yangwulin
  */
 @SpringBootApplication
 @MapperScan("com.ywl.dao")

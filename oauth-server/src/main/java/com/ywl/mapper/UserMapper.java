@@ -1,17 +1,15 @@
-package com.ywl.dao;
+package com.ywl.mapper;
 
 import com.ywl.entity.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 用户表(User)表数据库访问层
+ * (User)表数据库访问层
  *
  * @author yangwulin
- * @since 2020-05-14 09:31:37
+ * @since 2020-05-15 17:59:26
  */
-@Mapper
 public interface UserMapper {
 
     /**
@@ -64,10 +62,4 @@ public interface UserMapper {
      */
     int deleteById(Integer id);
 
-    /**
-     * 通过用户名查询用户
-     * @param username 用户名
-     * @return 用户信息
-     */
-    List<User> selectByUserName(String username);
 }

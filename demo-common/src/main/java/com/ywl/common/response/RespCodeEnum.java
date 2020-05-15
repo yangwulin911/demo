@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * 响应状态码
- * @author Administrator
+ * @author yangwulin
  */
 
 @Getter
@@ -17,7 +17,12 @@ public enum RespCodeEnum {
     /**
      * 请求失败
      */
-    FAIl(5000, "请求失败");
+    FAIl(5000, "请求失败"),
+    USER_NAME_EXIST(4010, "用户名已存在"),
+    ACCESS_TOKEN_INVALID(4001, "token失效"),
+    UNAUTHORIZED(4002, "资源未授权"),
+    INSUFFICIENT_PERMISSIONS(4003, "权限不足")
+    ;
 
     /**
      * 响应码

@@ -1,6 +1,8 @@
 package com.ywl.service.impl;
 
+import com.ywl.common.exception.ApplicationException;
 import com.ywl.common.response.R;
+import com.ywl.common.response.RespCodeEnum;
 import com.ywl.dao.UserMapper;
 import com.ywl.entity.User;
 import com.ywl.service.UserService;
@@ -14,7 +16,7 @@ import java.util.UUID;
 /**
  * 用户表(User)表服务实现类
  *
- * @author makejava
+ * @author yangwulin
  * @since 2020-05-14 09:31:37
  */
 @Service("userService")
@@ -75,7 +77,7 @@ public class UserServiceImpl implements UserService {
         List<User> userList = userMapper.selectByUserName(user.getUsername());
 
         if (userList != null && !userList.isEmpty()) {
-            return R.createError("用户名已存在");
+            throw new ApplicationException(RespCodeEnum.USER_NAME_EXIST);
         }
 
         // 插入数据到数据库

@@ -8,6 +8,9 @@ spring:
     url: jdbc:mysql://120.79.158.192:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root1234
+    initialization-mode: always
+    schema: classpath:sql/boot.sql
+    data:
   # redis 服务端相关配置
   redis:
     # 服务器地址

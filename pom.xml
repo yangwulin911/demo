@@ -6,6 +6,8 @@
     <modules>
         <module>demo-user</module>
         <module>demo-common</module>
+        <module>oauth-server</module>
+        <module>oauth-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -26,6 +28,7 @@
         <mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
         <pagehelper-spring-boot-starter.version>1.2.12</pagehelper-spring-boot-starter.version>
         <demo-common.version>0.0.1-SNAPSHOT</demo-common.version>
+        <spring-security-oauth2-autoconfigure>2.2.6.RELEASE</spring-security-oauth2-autoconfigure>
     </properties>
 
     <dependencies>

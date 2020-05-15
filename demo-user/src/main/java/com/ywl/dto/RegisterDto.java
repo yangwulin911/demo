@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * 用户注册dto
- * @author Administrator
+ * @author yangwulin
  */
 @Data
 public class RegisterDto {

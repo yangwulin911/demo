@@ -1,14 +1,13 @@
 package com.ywl.service;
 
-import com.ywl.common.response.R;
 import com.ywl.entity.User;
 import java.util.List;
 
 /**
- * 用户表(User)表服务接口
+ * (User)表服务接口
  *
  * @author yangwulin
- * @since 2020-05-14 09:31:37
+ * @since 2020-05-15 17:59:26
  */
 public interface UserService {
 
@@ -35,7 +34,7 @@ public interface UserService {
      * @param user 实例对象
      * @return 实例对象
      */
-    R insert(User user);
+    User insert(User user);
 
     /**
      * 修改数据
@@ -53,10 +52,4 @@ public interface UserService {
      */
     boolean deleteById(Integer id);
 
-    /**
-     * 通过用户名查询用户
-     * @param username 用户名
-     * @return 用户信息
-     */
-    List<User> queryUserByUserName(String username);
 }

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * 请求响应工具类
- * @author Administrator
+ * @author yangwulin
  */
 @Data
 @AllArgsConstructor
@@ -30,13 +30,17 @@ public class R<T> implements Serializable {
      */
     private T data;
 
-    public R(RespCodeEnum respCodeEnum, String message, T data) {
+    private R(RespCodeEnum respCodeEnum, String message, T data) {
         this.code = respCodeEnum.getCode();
         this.message = message;
         this.data = data;
     }
+    private R(RespCodeEnum respCodeEnum) {
+        this.code = respCodeEnum.getCode();
+        this.message = respCodeEnum.getMessage();
+    }
 
-    public R(String message) {
+    private R(String message) {
         this.code = RespCodeEnum.FAIl.getCode();
         this.message = message;
     }
@@ -52,7 +56,7 @@ public class R<T> implements Serializable {
     }
 
     public static R createSuccess() {
-        return new R(RespCodeEnum.SUCCESS, null, null);
+        return new R<>(RespCodeEnum.SUCCESS, null, null);
     }
 
     /**
@@ -61,11 +65,11 @@ public class R<T> implements Serializable {
      * @return 指定结构的数据
      */
     public static R createError(String message) {
-        return new R(message);
+        return new R<>(message);
     }
 
     public static R createError() {
-        return new R(RespCodeEnum.FAIl.getMessage());
+        return new R<>(RespCodeEnum.FAIl.getMessage());
     }
 
     /**
@@ -75,7 +79,15 @@ public class R<T> implements Serializable {
      * @return 指定结构的数据
      */
     public static R createError(RespCodeEnum respCodeEnum, String message) {
-        return new R(respCodeEnum.getCode(), message, null);
+        return new R<>(respCodeEnum.getCode(), message, null);
+    }
+    /**
+     * 请求失败构造方法
+     * @param respCodeEnum 错误码
+     * @return 指定结构的数据
+     */
+    public static R createError(RespCodeEnum respCodeEnum) {
+        return new R<>(respCodeEnum);
     }
 
 }
